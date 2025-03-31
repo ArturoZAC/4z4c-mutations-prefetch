@@ -5,7 +5,7 @@ interface GetProductsOptions {
   filterkey?: string;
 }
 
-const sleep = (seconds: number = 2):Promise<boolean> => {
+export const sleep = (seconds: number = 2):Promise<boolean> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -43,7 +43,7 @@ export interface ProductLike {
 
 export const createProduct = async( product: ProductLike) => {
 
-  await sleep();
+  // await sleep();
 
   const { data } = await productsApi.post<Product>('/products', product);
   return data;

@@ -1,7 +1,6 @@
 import { Button, Image, Input, Textarea } from "@nextui-org/react";
-import { useMutation } from "@tanstack/react-query";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { productAction } from "..";
+import { useProductMutation } from "..";
 
 interface FormInputs {
   title:        string;
@@ -13,9 +12,8 @@ interface FormInputs {
 
 export const NewProduct = () => {
 
-  const productMutation = useMutation({
-    mutationFn: productAction.createProduct,
-  })
+  const productMutation = useProductMutation();
+
 
   const { control, handleSubmit, watch } = useForm<FormInputs>({
     defaultValues: {

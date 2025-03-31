@@ -10,6 +10,8 @@ export { MensPage } from "./pages/MensPage";
 export { NewProduct } from "./pages/NewProduct";
 export { WomensPage } from "./pages/WomensPage";
 
+export * from './hooks/useProductMutation';
+
 export type * from "./interfaces/product";
 export * from "./api/productsApi";
 
